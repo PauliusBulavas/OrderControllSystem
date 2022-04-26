@@ -1,9 +1,8 @@
 ﻿using OrderControll.Common;
+using OrderControll.Common.DTOs;
 using OrderControll.Repos.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace OrderControll.Repos
 {
@@ -19,22 +18,26 @@ namespace OrderControll.Repos
 
         public List<OrderItem> GetOrderItems() => OrderItems;
 
-        public OrderItem GetOrdersById(int orderId)
+        public OrderItem Add(OrderItemModel orderItem, Client client, Product product, int orderId)
         {
-            var actualOrder = OrderItems.FirstOrDefault(x => x.Id == orderId);
+            if (orderItem != null)
+            {
+                var entity = new OrderItem
+                {
+                    Id = OrderItems.Count() + 1,
+                    Name = orderItem.Name,
+                    ClientId = client.Id,
+                    ProductId = product.Id,
+                    OrderId = orderId,
+                    Quantity = orderItem.Quantity
+                };
 
-            return actualOrder;
-        }
+                OrderItems.Add(entity);
 
-        public void AddOrder(OrderItem orderItem)
-        {
-            orderItem.Id = OrderItems.LastOrDefault().Id + 1;
-            OrderItems.Add(orderItem);
-        }
+                return entity;
+            }
 
-        public bool RemoveOrder(int id)
-        {
-            return OrderItems.Remove(GetOrdersById(id));
+            return null;
         }
     }
 }

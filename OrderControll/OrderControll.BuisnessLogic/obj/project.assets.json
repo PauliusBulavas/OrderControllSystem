@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "OrderControll.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/OrderControll.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrderControll.Common.dll": {}
+        }
+      },
+      "OrderControll.Repos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "OrderControll.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OrderControll.Repos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrderControll.Repos.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "OrderControll.Common/1.0.0": {
+      "type": "project",
+      "path": "../OrderControll.Common/OrderControll.Common.csproj",
+      "msbuildProject": "../OrderControll.Common/OrderControll.Common.csproj"
+    },
+    "OrderControll.Repos/1.0.0": {
+      "type": "project",
+      "path": "../OrderControll.Repos/OrderControll.Repos.csproj",
+      "msbuildProject": "../OrderControll.Repos/OrderControll.Repos.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "OrderControll.Repos >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\pauli\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pauli\\Documents\\GitHub\\OrderControllSystem\\OrderControll\\OrderControll.Repos\\OrderControll.Repos.csproj": {
+              "projectPath": "C:\\Users\\pauli\\Documents\\GitHub\\OrderControllSystem\\OrderControll\\OrderControll.Repos\\OrderControll.Repos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

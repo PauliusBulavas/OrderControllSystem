@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OrderControll
+﻿namespace OrderControll
 {
     internal class Program
     {

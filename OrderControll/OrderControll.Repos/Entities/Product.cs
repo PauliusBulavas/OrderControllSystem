@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OrderControll.Repos.Entities
+﻿namespace OrderControll.Repos.Entities
 {
-    public class Product
+    public class Product : Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }

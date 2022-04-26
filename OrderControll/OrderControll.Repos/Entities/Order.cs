@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OrderControll.Repos.Entities
 {
-    public class Order
+    public class Order : Entity
     {
         public int Id { get; set; }
         public decimal TotalPrice { get; set; }

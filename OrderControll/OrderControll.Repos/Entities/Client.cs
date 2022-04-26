@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OrderControll.Repos.Entities
+﻿namespace OrderControll.Repos.Entities
 {
-    public class Client
+    public class Client : Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }
