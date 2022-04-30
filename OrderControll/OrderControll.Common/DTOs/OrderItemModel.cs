@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OrderControll.Common.DTOs
 {
@@ -8,5 +6,9 @@ namespace OrderControll.Common.DTOs
     {
         public string Name { get; set; }
         public double Quantity { get; set; }
+        public string ClientCompanyName { get; set; }
+        public string ProductName { get; set; }
+        public double TotalPrice { get; set; }
+        public DateTime Created { get; set; }
     }
 }

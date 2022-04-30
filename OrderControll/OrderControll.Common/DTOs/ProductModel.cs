@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OrderControll.Common.DTOs
+﻿namespace OrderControll.Common.DTOs
 {
     public class ProductModel
     {

@@ -1,7 +1,2 @@
-OrderId,ClinetId,ClientName,ClientCompany,ProductId,ProductName,Ammount,TotalPrice
-2;2;Petras;UAB China Trade;2;Iron;10;1423.5
-3;3;Andrius;UAB Smeltlita;3;Coal;40;2768
-5;3;Andrius;UAB Smeltlita;5;Sulfur;60;9607.2
-6;2;Petras;UAB China Trade;4;Tin;12;611.88
-9;3;Andrius;UAB Smeltlita;3;Coal;10;692
-11;3;Andrius;UAB Smeltlita;4;Tin;300;15297
+Id;Name;ClinetId;ClientCompanyName;ProductId;ProductName;Quantity;TotalPrice;Created
+

@@ -1,27 +1,22 @@
 ﻿using OrderControll.Common.DTOs;
 using OrderControll.Repos;
-using System;
+using OrderControll.Repos.Entities;
 using System.Collections.Generic;
-using System.Text;
 
 namespace OrderControll.BuisnessLogic
 {
     public class OrderService
     {
-        private readonly OrderRepo _orderRepo;
         private readonly OrderItemRepo _orderItemRepo;
+        private readonly ClientRepo _clientRepo;
+        private readonly ProductRepo _productRepo;
+        private readonly Utility<Entity> utility;
 
-        public OrderService(OrderRepo orderRepo, OrderItemRepo orderItemRepo)
-        { _orderRepo = orderRepo; _orderItemRepo = orderItemRepo; }
-
-        public void SubmitOrder(OrderModel model)
+        public OrderService(OrderItemRepo orderItemRepo, ClientRepo clientRepo, ProductRepo productRepo)
         {
-            var orderEntity = _orderRepo.Add(model);
-
-            foreach (var orderItem in model.Items)
-            {
-                var orderItemEntity = _orderItemRepo.Add(orderItem, orderEntity.Id); // client and product needed still fak
-            }
+            _orderItemRepo = orderItemRepo;
+            _clientRepo = clientRepo;
+            _productRepo = productRepo;
         }
     }
 }
